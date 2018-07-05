@@ -1,5 +1,5 @@
 import getAlgoliaIndex from './algolia'
-export const ALGOLIA = Symbol('ALGOLIA')
+export const ALGOLIA = '__REDUX_ALGOLIA__'
 
 const defaultOptions = {
   algoliaClient: null,
@@ -27,16 +27,16 @@ export default ({
       method,
       indexName,
       options,
+      requestType,
       successType,
-      errorType,
-      sendingType,
+      failureType
     } = algoliaAction
 
     let params = { method, indexName, options }
 
-    if (sendingType) {
+    if (requestType) {
       dispatch({
-        type: sendingType,
+        type: requestType,
         ...params
       })
     }
@@ -53,9 +53,9 @@ export default ({
         ...params
       })
     }, (error) => {
-      if (errorType) {
+      if (failureType) {
         next({
-          type: errorType,
+          type: failureType,
           error,
           ...params
         })
