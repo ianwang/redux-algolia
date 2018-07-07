@@ -19,7 +19,7 @@ yarn add redux-algolia
 
 2. Combine with store in `configureStore.js`
 Make sure you have `algoliasearch` installed
-```
+```js
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import createAlgoliaMiddleware from 'redux-algolia'
 import reducers from './reducers'
@@ -52,7 +52,7 @@ export default function configureStore(initialState) {
 ## Usage
 
 ### `actions/search.js`
-```
+```js
 import { ALGOLIA } from 'redux-algolia'
 
 export const SEARCH_REQUEST = '@@algolia/SEARCH_REQUEST'
