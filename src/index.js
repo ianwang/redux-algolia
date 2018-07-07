@@ -1,17 +1,14 @@
 import getAlgoliaIndex from './algolia'
 export const ALGOLIA = '__REDUX_ALGOLIA__'
 
-const defaultOptions = {
-  algoliaClient: null,
-  transformIndexName: (name) => name,
-  transformResponse: (res) => res
-}
+const defaultTransformIndex = (name) => name
+const defaultTransformResponse = (res) => res
 
 export default ({
   algoliaClient,
-  transformIndexName,
-  transformResponse
-} = defaultOptions) => {
+  transformIndexName = defaultTransformIndex,
+  transformResponse = defaultTransformResponse
+} = {}) => {
   if (!algoliaClient) {
     throw new Error('algoliaClient is required')
   }
