@@ -8,18 +8,18 @@
 
 1. Install the package via npm
 ```
-npm install redux-algolia-middleware --save
+npm install redux-algolia --save
 ```
 or yarn
 ```
-yarn add redux-algolia-middlware
+yarn add redux-algolia
 ```
 
 2. Combine with store in `configureStore.js`
 Make sure you have `algoliasearch` installed
 ```
 import { createStore, applyMiddleware, combineReducers } from 'redux'
-import createAlgoliaMiddleware from 'redux-redux-middleware'
+import createAlgoliaMiddleware from 'redux-algolia'
 import reducers from './reducers'
 
 import algoliasearch from 'algoliasearch'
@@ -51,7 +51,7 @@ export default function configureStore(initialState) {
 
 ### `actions/search.js`
 ```
-import { ALGOLIA } from 'redux-algolia-middleware'
+import { ALGOLIA } from 'redux-algolia'
 
 export const SEARCH_REQUEST = '@@algolia/SEARCH_REQUEST'
 export const SEARCH_SUCCESS = '@@algolia/SEARCH_SUCCESS'

@@ -1,0 +1,20 @@
+{
+  "name": "redux-algolia",
+  "version": "1.0.0",
+  "description": "Redux middleware for Algolia search",
+  "main": "dist/index.js",
+  "repository": "git@github.com:ianwang/redux-algolia.git",
+  "author": "Ian Wang <gogoenwon@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "babel src --out-dir dist",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "rimraf": "^2.6.2"
+  }
+}
