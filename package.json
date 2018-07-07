@@ -1,17 +1,20 @@
 {
   "name": "redux-algolia",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Redux middleware for Algolia search",
   "main": "dist/index.js",
   "repository": "git@github.com:ianwang/redux-algolia.git",
   "author": "Ian Wang <gogoenwon@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prebuild": "npm run clean",
-    "prepublish": "npm run build",
+    "prebuild": "yarn clean",
+    "prepublish": "yarn build",
     "build": "babel src --out-dir dist",
     "test": "jest --maxWorkers=2",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "release:patch": "yarn build && release patch && yarn publish",
+    "release:minor": "yarn build && release minor && yarn publish",
+    "release:major": "yarn build && release major && yarn publish"
   },
   "jest": {
     "testEnvironment": "node"
@@ -23,6 +26,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "jest": "^23.3.0",
+    "release": "^4.0.1",
     "rimraf": "^2.6.2"
   }
 }
