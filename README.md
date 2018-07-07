@@ -1,21 +1,14 @@
-# redux-algolia-middlware
+# redux-algolia
 
 [![Build Status](https://travis-ci.org/ianwang/redux-algolia.svg?branch=master)](https://travis-ci.org/ianwang/redux-algolia)
 
 [Redux middleware](https://redux.js.org/docs/advanced/Middleware.html) for [Algolia Search](https://github.com/algolia/algoliasearch-client-javascript).
 
 
-
 ## Installation
 
 1. Install the package via npm
-```
-npm install redux-algolia --save
-```
-or yarn
-```
-yarn add redux-algolia
-```
+**It's not on NPM now, will be published soon**
 
 2. Combine with store in `configureStore.js`
 Make sure you have `algoliasearch` installed
