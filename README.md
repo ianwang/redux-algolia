@@ -1,5 +1,7 @@
 # redux-algolia-middlware
 
+[![Build Status](https://travis-ci.org/ianwang/redux-algolia.svg?branch=master)](https://travis-ci.org/ianwang/redux-algolia)
+
 [Redux middleware](https://redux.js.org/docs/advanced/Middleware.html) for [Algolia Search](https://github.com/algolia/algoliasearch-client-javascript).
 
 

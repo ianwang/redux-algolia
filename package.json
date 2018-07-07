@@ -8,8 +8,13 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "npm run clean",
+    "prepublish": "npm run build",
     "build": "babel src --out-dir dist",
+    "test": "jest --maxWorkers=2",
     "clean": "rimraf dist"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
