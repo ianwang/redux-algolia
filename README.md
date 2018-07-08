@@ -8,7 +8,13 @@
 ## Installation
 
 1. Install the package via npm
-**It's not on NPM now, will be published soon**
+```
+npm install redux-algolia --save
+```
+or yarn
+```
+yarn add redux-algolia
+```
 
 2. Combine with store in `configureStore.js`
 Make sure you have `algoliasearch` installed
