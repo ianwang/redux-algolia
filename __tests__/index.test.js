@@ -4,7 +4,6 @@ import getAlgoliaIndex from '../src/algolia'
 jest.mock('../src/algolia', () => jest.fn())
 
 describe('Redux Algolia', ()=> {
-
   describe('When algoliaClient is not provided', () => {
     it('throws an error', () => {
       expect(() => createAlgoliaMiddlware()).toThrow(
@@ -34,7 +33,7 @@ describe('Redux Algolia', ()=> {
     })
 
     describe('when action payload is valid', () => {
-      let payload, algoParams
+      let payload, algoParams, otherPayload
       let mockSearch, response
       beforeEach(() => {
         payload = {
@@ -48,7 +47,11 @@ describe('Redux Algolia', ()=> {
           successType: 'THE_SUCCESS_TYPE',
           failureType: 'THE_FAILURE_TYPE'
         }
+        otherPayload = {
+          name: 'name'
+        }
         action = {
+          otherPayload,
           [ALGOLIA]: payload
         }
         algoParams = {
@@ -86,6 +89,7 @@ describe('Redux Algolia', ()=> {
       it('dispatches sending type', () => {
         expect(dispatch).toBeCalledWith({
           type: payload.requestType,
+          otherPayload,
           ...algoParams
         })
       })
@@ -94,6 +98,7 @@ describe('Redux Algolia', ()=> {
         expect(next).toBeCalledWith({
           type: payload.successType,
           response,
+          otherPayload,
           ...algoParams
         })
       })

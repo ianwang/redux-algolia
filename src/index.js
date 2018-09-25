@@ -19,7 +19,7 @@ export default ({
       return next(action)
     }
 
-    let algoliaAction = action[ALGOLIA]
+    let { [ALGOLIA]: algoliaAction, ...payload } = action
     let {
       method,
       indexName,
@@ -29,7 +29,7 @@ export default ({
       failureType
     } = algoliaAction
 
-    let params = { method, indexName, options }
+    let params = { method, indexName, options, ...payload }
 
     if (requestType) {
       dispatch({
