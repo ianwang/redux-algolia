@@ -43,7 +43,8 @@ export default ({
       indexName: transformIndexName(indexName)
     })
 
-    return algoliaIndex[method](options).then((response) => {
+    let { query, ...otherOptions } = options
+    return algoliaIndex[method](query, otherOptions).then((response) => {
       next({
         type: successType,
         response: transformResponse(response),

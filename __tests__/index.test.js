@@ -84,7 +84,7 @@ describe('Redux Algolia', ()=> {
       })
 
       it('calls algolia[method] with options', () => {
-        expect(mockSearch).toBeCalledWith(payload.options)
+        expect(mockSearch).toBeCalledWith('query', { page: 2 })
       })
       it('dispatches sending type', () => {
         expect(dispatch).toBeCalledWith({
